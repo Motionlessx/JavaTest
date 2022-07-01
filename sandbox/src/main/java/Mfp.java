@@ -3,22 +3,21 @@ public class Mfp {
         hello("world");
         hello("user");
 
-        double x = 5;
-        System.out.println(bbs(x));
+        Square s = new Square(5);
+        System.out.println(area(s));
 
-        double a = 4;
-        double b = 6;
-        System.out.println(bbs(a, b));
+        Rectangle r = new Rectangle(4, 5);
+        System.out.println(area(r));
     }
     public static void hello (String somebd) {
         System.out.println("hello " + somebd);
     }
 
-    public static double bbs (double l) {
-        return l * l;
+    public static double area(Square s) {
+        return s.l * s.l;
     }
-    public static double bbs (double a, double b) {
-        return a * b;
+    public static double area(Rectangle r) {
+        return r.a * r.b;
     }
 }
 
