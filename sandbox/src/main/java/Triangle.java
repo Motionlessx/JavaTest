@@ -8,4 +8,8 @@ public class Triangle {
         this.xb = xb;
         this.xc = xc;
     }
+    public  double area() {
+        return this.xa + this.xb + this.xc;
+    }
+
 }
