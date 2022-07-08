@@ -3,8 +3,8 @@
         private int m;
         private int c;
 
-    void setInta(int am){
-      m = am;
+    void setInta(int m){
+      this.m = m;
     }
 //    void setIntb(int b){
 //        this.c = c;

@@ -7,10 +7,11 @@ public class Start {
 ////        String str3 = str.toUpperCase() + str1;
 //        int str4 = str.length();
 //        System.out.println(str == str1);
-    }
-    public static void setParams(String[] args){
         Second sec = new Second();
-        sec.setInta(5);
+        sec.setInta(15);
         sec.getInta();
     }
+//    public static void setParams(String[] args){
+//
+//    }
 }
