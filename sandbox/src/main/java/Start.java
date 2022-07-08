@@ -10,11 +10,15 @@ public class Start extends Animal {
 //        sec.getInta();
 
 
-            Cow burka = new Cow("Moo", 20, 4);
-            burka.moo();
-        }
+//            Cow burka = new Cow("Moo", 20, 4);
+//            burka.moo();
+//        }
+        Boy vn = new Boy();
+        Girl gr = new Girl();
+
+        Player unit = vn;
     }
 //    public static void setParams(String[] args){
 //
-//    }
+   }
 
