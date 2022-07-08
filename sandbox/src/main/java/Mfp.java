@@ -15,6 +15,9 @@ public class Mfp {
     public static void hello (String somebd) {
         System.out.println("hello " + somebd);
     }
+    public static void zazz() {
+        System.out.println("zozz");
+    }
 
 }
 
