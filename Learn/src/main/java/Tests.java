@@ -1,8 +1,8 @@
 public class Tests {
     public static void main(String[] args) {
-        Animal animal1 = new Animal(1);
+        Animal animal2 = new Animal(2);
         Person person1 = new Person("Bob");
-        Person.showInfo();
-
+        animal2.showInfo();
+        person1.showInfo();
     }
 }

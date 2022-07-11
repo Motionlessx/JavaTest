@@ -1,5 +1,5 @@
 public class Animal implements InterfaceMain {
-    int id = 1;
+    public int id;
 
     public Animal(int id) {
         this.id = id;
