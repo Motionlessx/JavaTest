@@ -4,5 +4,7 @@ public class Tests {
         Person person1 = new Person("Bob");
         animal2.showInfo();
         person1.showInfo();
+        Human Als = new Human();
+        Als.say();
     }
 }

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c0933e-acc5-4893-afa0-5b92c73008f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Learn/src/main/java/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learn/src/main/java/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Learn/src/main/java/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learn/src/main/java/InterfaceMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Learn/src/main/java/InterfaceMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learn/src/main/java/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Learn/src/main/java/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Learn/src/main/java/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Learn/src/main/java/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,18 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/JavaTest",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Documents/GitHub/JavaTest&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.SegmentsCrud">
     <configuration name="AutotestBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Autotest2" />
