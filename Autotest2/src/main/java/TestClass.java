@@ -22,6 +22,8 @@ public class TestClass {
         int sum = getSum(array);
         System.out.println();
         System.out.println(sum + 100);
+        System.out.println();
+        division(10, 10);
 
     }
     static int getSum (int x, int y) {
@@ -51,5 +53,17 @@ public class TestClass {
 
     static void sayHello(String name) {
         System.out.println("Hello " + name);
+    }
+
+    static void division (int a, int b) {
+        try {
+            System.out.println(a / b);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("zxczxc");
+        }
+        finally {
+            System.out.println("WWWWWW");
+        }
     }
 }

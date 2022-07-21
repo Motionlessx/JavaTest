@@ -1,3 +1,5 @@
+import org.checkerframework.checker.units.qual.C;
+
 import java.util.*;
 
 public class Main {
@@ -89,6 +91,19 @@ public class Main {
         System.out.println(map.get(2));
         map.put(2, "pink");
         System.out.println(map.get(2));
+        System.out.println("-----");
+
+
+
+        Car car1 = new Car();
+//        car1.maxWeight = 2800;
+        car1.drive(240, 2600);
+
+        Car car2 = new Car(200, 250, "red");
+        System.out.println(car2.speed + " " + car2.maxSpeed + " " + car2.color);
+
+        Car.abs = 2;
+        System.out.println(Car.abs);
     }
 
 
