@@ -18,11 +18,11 @@ public class WebsiteTest {
     public void testWebsite() throws InterruptedException {
         login.login();
 //        login.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(10000);
+
         login.driver.get("https://cp-inst334-client.phonexa.xyz/p8/dashboard");
 
     //WebElement dynamicElement = login.driver.findElement(By.xpath("/html/body/div[1]/aside[1]/section/ul/li[4]/a"));
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         login.driver.findElement(By.xpath("/html/body/div[1]/aside[1]/section/ul/li[4]/a")).click();
         Thread.sleep(2000);
         login.driver.findElement(By.xpath("/html/body/div[1]/aside[1]/section/ul/li[4]/ul/li[6]/a/span")).click();
