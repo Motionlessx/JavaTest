@@ -4,14 +4,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Runner {
     SomeClass test = new SomeClass();
+    WebDriver driver = Drivers.getDriver();
 
     @Test
     public void main() {
         test.start();
-        test.selectOption("day", "15");
+        test.selectOption("day", "5");
         test.selectOption("month", "сен");
         test.selectOption("year", "1995");
-        test.browserClose();
+       // test.browserClose();
 
     }
 }
