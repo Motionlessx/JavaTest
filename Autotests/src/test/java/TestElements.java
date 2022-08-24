@@ -9,7 +9,8 @@ public class TestElements {
 
 //    test1.checkButtons();
     tests.driver.get("https://gitlab.com/users/sign_up");
-    tests.register("asdf", "dqdwqd", "dqwesad", "qwd@dsd.dsqd", "dqhdwdjqdWHDS");
+    tests.registerWithInvalidCreds("asdf", "dqdwqd", "dqwesad", "qwd@dsd.dsqd", "dqhdwdjqdWHDS");
+
 
 
 

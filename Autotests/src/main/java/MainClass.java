@@ -14,19 +14,23 @@ public class MainClass {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "E:\\Idea\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        RegisterPage registerPage = new RegisterPage(driver);
+        driver.get("https://gitlab.com/users/sign_up/");
+        registerPage.registerWithInvalidCreds("xc", "sda", "dsq", "dsq@ds.dd", "dsqWY245SD");
+
+//        driver.get("https://www.w3schools.com/html/html_tables.asp");
+//        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
+//        TableTest table = new TableTest(tableElement, driver);
+//        System.out.println("Rows number is: " + table.getRows().size());
+//        System.out.println(table.getValueFromCell(2, 3));
+//        System.out.println(table.getValueFromCell(4, 1));
+//        System.out.println(table.getValueFromCell(4, "Company"));
+//        System.out.println(table.getValueFromCell(1, "Country"));
+//        System.out.println(table.getValueFromCell(2, "Contact"));
 
 
-        driver.get("https://www.w3schools.com/html/html_tables.asp");
-        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
-        TableTest table = new TableTest(tableElement, driver);
-        System.out.println("Rows number is: " + table.getRows().size());
-        System.out.println(table.getValueFromCell(2, 3));
-        System.out.println(table.getValueFromCell(4, 1));
-        System.out.println(table.getValueFromCell(4, "Company"));
-        System.out.println(table.getValueFromCell(1, "Country"));
-        System.out.println(table.getValueFromCell(2, "Contact"));
     }
 
 }
