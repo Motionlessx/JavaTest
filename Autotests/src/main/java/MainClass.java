@@ -21,8 +21,8 @@ public class MainClass {
         registerPage.registerWithInvalidCreds("xc", "sda", "dsq", "dsq@ds.dd", "dsqWY245SD");
 
 //        driver.get("https://www.w3schools.com/html/html_tables.asp");
-//        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
-//        TableTest table = new TableTest(tableElement, driver);
+        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
+        TableTest table = new TableTest(tableElement, driver);
 //        System.out.println("Rows number is: " + table.getRows().size());
 //        System.out.println(table.getValueFromCell(2, 3));
 //        System.out.println(table.getValueFromCell(4, 1));
