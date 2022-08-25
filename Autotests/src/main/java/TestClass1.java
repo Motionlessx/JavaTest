@@ -1,6 +1,8 @@
 import java.util.Arrays;
 
+
 public class TestClass1 {
+
     public static void main(String[] args) {
 //        for (int i = 0; i <= 8; i++) {
 //
@@ -39,7 +41,11 @@ public class TestClass1 {
             }
             System.out.println();
         }
+
+
     }
+
+
 }
 
 
