@@ -69,6 +69,10 @@ public class SomeClass {
         driver.findElement(By.xpath(optionXpath)).click();
 //        wait.until(ExpectedConditions.invisibilityOfElementLocated((By.xpath(listXpath))));
     }
+    public void goToRecord(String sessionId) {
+        String recordPage = String.format("https://cp-inst334-client.phonexa.xyz/p8/hitmetrix/recordings/play?sessionId=%s&pageUrl=recordings", sessionId);
+        driver.get(recordPage);
+    }
 
     public void checkButtons() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

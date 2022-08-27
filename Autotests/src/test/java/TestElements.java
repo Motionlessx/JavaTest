@@ -3,7 +3,7 @@ import org.junit.Test;
 public class TestElements {
 //   SomeClass test1 = new SomeClass();
    RegisterPage tests = new RegisterPage(Drivers.getDriver());
-@Test
+//@Test
     public void main() throws InterruptedException {
     //test1.checkActions();
 
