@@ -8,6 +8,5 @@ public class Drivers {
         System.setProperty("webdriver.chrome.driver", "E:\\Idea\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         return driver;
-
     }
 }

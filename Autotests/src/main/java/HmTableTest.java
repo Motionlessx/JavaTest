@@ -7,42 +7,46 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TableTest {
-    private WebElement tableElement;
-    private WebDriver driver;
+public class HmTableTest {
 
-    public TableTest(WebElement tableElement, WebDriver driver) {
+    WebDriver driver;
+    WebElement tableElement;
+
+
+
+
+    public HmTableTest(WebElement tableElement, WebDriver driver) {
         this.tableElement = tableElement;
         this.driver = driver;
     }
 
-    public List<WebElement> getRows() {
-        List<WebElement> rows = tableElement.findElements(By.xpath(".//tr"));
+    public List<WebElement> getRowsH() {
+        List<WebElement> rows = tableElement.findElements(By.xpath("//table[@data-tablesearch-id='0']//tr"));
         rows.remove(0);
         return rows;
     }
 
-    public List<WebElement> getHeadings() {
-        WebElement headingsRow = tableElement.findElement(By.xpath(".//tr[1]"));
-        List<WebElement> headingsCols = headingsRow.findElements(By.xpath(".//th"));
+    public List<WebElement> getHeadingsH() {
+        WebElement headingsRow = tableElement.findElement(By.xpath("//thead[@class='stickToTop']//tr[1]"));
+        List<WebElement> headingsCols = headingsRow.findElements(By.xpath("//thead[@class='stickToTop']//tr[1]/th"));
         return headingsCols;
     }
 
-    public List<List<WebElement>> getRowsWithCols() {
-        List<WebElement> rows = getRows();
+    public List<List<WebElement>> getRowsWithColsH() {
+        List<WebElement> rows = getRowsH();
         List<List<WebElement>> rowsWithCols = new ArrayList<List<WebElement>>();
         for (WebElement row : rows) {
-            List<WebElement> rowWithCols = row.findElements(By.xpath(".//td"));
+            List<WebElement> rowWithCols = row.findElements(By.xpath("//table[@data-tablesearch-id='0']//tr/td"));
             rowsWithCols.add(rowWithCols);
         }
         return rowsWithCols;
     }
 
-    public List<Map<String, WebElement>> getRowsWithColsByHeadings() {
-        List<List<WebElement>> rowsWithCols = getRowsWithCols();
+    public List<Map<String, WebElement>> getRowsWithColsByHeadingsH() {
+        List<List<WebElement>> rowsWithCols = getRowsWithColsH();
         List<Map<String, WebElement>> rowsWithColsByHeadings = new ArrayList<Map<String, WebElement>>();
         Map<String, WebElement> rowByHeadings;
-        List<WebElement> headingCols = getHeadings();
+        List<WebElement> headingCols = getHeadingsH();
         for (List<WebElement> row : rowsWithCols) {
             rowByHeadings = new HashMap<String, WebElement>();
             for (int i = 0; i < headingCols.size(); i++) {
@@ -55,15 +59,15 @@ public class TableTest {
         return rowsWithColsByHeadings;
     }
 
-    public String getValueFromCell(int rowNumber, int colNumber) {
-        List<List<WebElement>> rowsWithCols = getRowsWithCols();
+    public String getValueFromCellH(int rowNumber, int colNumber) {
+        List<List<WebElement>> rowsWithCols = getRowsWithColsH();
         WebElement cell = rowsWithCols.get(rowNumber - 1).get(colNumber - 1);
         return cell.getText();
     }
 
-    public String getValueFromCell(int rowNumber, String colName) {
-        List<Map<String, WebElement>> rowsWithColsByHeadings = getRowsWithColsByHeadings();
+
+    public String getValueFromCellH(int rowNumber, String colName) {
+        List<Map<String, WebElement>> rowsWithColsByHeadings = getRowsWithColsByHeadingsH();
         return rowsWithColsByHeadings.get(rowNumber - 1).get(colName).getText();
     }
-
 }

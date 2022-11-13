@@ -1,8 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HitmetrixSegmentsPage {
     private WebDriver driver;
@@ -28,10 +33,64 @@ public class HitmetrixSegmentsPage {
     private By refreshButton = By.xpath("//button[text()[contains(.,'Refresh')]]");
     private By lastSegmentEditButton = By.xpath("//table/tbody/tr[last()]/td[last()]/button[text()[contains(.,'Edit')]]");
     private By lastSegmentDeleteButton = By.xpath("//table/tbody/tr[last()]/td[last()]/button[text()[contains(.,'Delete')]]");
-    private By lastSegmentName = By.xpath("//table[@class='table table-condensed table-hover table-striped exportAllPages tableSearch-applied tableExport-applied']/tbody/tr[last()]/td[1]");
+    private By lastSegmentName = By.xpath("//table[@data-tablesearch-id='0']/tbody/tr[last()]/td[1]");
     private By confirmTextArea = By.xpath("//form[@id='segment-delete-form']//label[text()[contains(.,'Enter')]]");
     private By enterTextInput = By.xpath("//input[@id='segmentform-confirmmsg']");
     private By modalDeleteButton = By.xpath("//form[@id='segment-delete-form']//button[text()='Delete']");
+//    WebElement tableElement = driver.findElement(By.xpath("//table[@data-tablesearch-id='0']"));
+//
+//
+//    public List<WebElement> getRowsH() {
+//        List<WebElement> rows = tableElement.findElements(By.xpath("//table[@data-tablesearch-id='0']//tbody//tr"));
+//        rows.remove(0);
+//        return rows;
+//    }
+//
+//    public List<WebElement> getHeadingsH() {
+//        WebElement headingsRow = tableElement.findElement(By.xpath("//thead[@class='stickToTop']//tr[1]"));
+//        List<WebElement> headingsCols = headingsRow.findElements(By.xpath("//thead[@class='stickToTop']//tr[1]/th/nobr"));
+//        return headingsCols;
+//    }
+//
+//    public List<List<WebElement>> getRowsWithColsH() {
+//        List<WebElement> rows = getRowsH();
+//        List<List<WebElement>> rowsWithCols = new ArrayList<List<WebElement>>();
+//        for (WebElement row : rows) {
+//            List<WebElement> rowWithCols = row.findElements(By.xpath("//table[@data-tablesearch-id='0']//tr/td"));
+//            rowsWithCols.add(rowWithCols);
+//        }
+//        return rowsWithCols;
+//    }
+//
+//    public List<Map<String, WebElement>> getRowsWithColsByHeadingsH() {
+//        List<List<WebElement>> rowsWithCols = getRowsWithColsH();
+//        List<Map<String, WebElement>> rowsWithColsByHeadings = new ArrayList<Map<String, WebElement>>();
+//        Map<String, WebElement> rowByHeadings;
+//        List<WebElement> headingCols = getHeadingsH();
+//        for (List<WebElement> row : rowsWithCols) {
+//            rowByHeadings = new HashMap<String, WebElement>();
+//            for (int i = 0; i < headingCols.size(); i++) {
+//                String heading = headingCols.get(i).getText();
+//                WebElement cell = row.get(i);
+//                rowByHeadings.put(heading, cell);
+//            }
+//            rowsWithColsByHeadings.add(rowByHeadings);
+//        }
+//        return rowsWithColsByHeadings;
+//    }
+//
+//    public String getValueFromCellH(int rowNumber, int colNumber) {
+//        List<List<WebElement>> rowsWithCols = getRowsWithColsH();
+//        WebElement cell = rowsWithCols.get(rowNumber - 1).get(colNumber - 1);
+//        return cell.getText();
+//    }
+//
+//
+//    public String getValueFromCellH(int rowNumber, String colName) {
+//        List<Map<String, WebElement>> rowsWithColsByHeadings = getRowsWithColsByHeadingsH();
+//        return rowsWithColsByHeadings.get(rowNumber - 1).get(colName).getText();
+//    }
+
 
 
 //    public void selectDeviceOf() {
@@ -103,6 +162,7 @@ public class HitmetrixSegmentsPage {
         selectBrowser();
         clickSaveAndRefresh();
     }
+
 
     public void editSegment() {
         clickEditButton();
