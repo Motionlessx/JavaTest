@@ -53,7 +53,7 @@ public class TrackingTest {
         System.out.println("website: " + getSessionId());
         driver.switchTo().window(window1);
         driver.get("https://cp-inst334-client.phonexa.xyz/p8/hitmetrix/recordings");
-        recordingsPage.checkLastSession();
+        recordingsPage.checkLastSession(sessionId);
         System.out.println("modal window: " + recordingsPage.getLastSessionId());
         Assert.assertEquals(sessionId,recordingsPage.getLastSessionId());
 
@@ -64,10 +64,10 @@ public class TrackingTest {
     public  String getSessionId() {
         return (String) jse.executeScript(String.format("return window.localStorage.getItem('spxSessionId');"));
     }
-    @After
-    public void browserClose(){
-        driver.quit();
-    }
+//    @After
+//    public void browserClose(){
+//        driver.quit();
+//    }
 
 
 }

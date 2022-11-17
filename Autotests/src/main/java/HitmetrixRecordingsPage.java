@@ -12,6 +12,7 @@ public class HitmetrixRecordingsPage {
     private By searchButton = By.xpath("//button[text()='Search']");
     private By lastSessionDetailsButton = By.xpath("//table[@data-tablesearch-id='0']//tbody/tr[1]/td[@column-id='sessionDetails']");
     private By lastSessionId = By.xpath("//div[@id='modalPopup']//table[@class='table no-margin disableTableFieldFilter disableFastSearch disableExport']//tr[2]/td[2]");
+    private By visitIdField = By.xpath("//input[@id='searchform-sessionId']");
     private void chooseWebsite() {
         driver.findElement(websiteSelector).click();
         driver.findElement(selectWebsite).click();
@@ -22,9 +23,13 @@ public class HitmetrixRecordingsPage {
     private void openSessionDetails(){
         driver.findElement(lastSessionDetailsButton).click();
     }
+    private void searchSession(String sessionId) {
+        driver.findElement(visitIdField).sendKeys(sessionId);
+    }
 
-    public void checkLastSession(){
+    public void checkLastSession(String sessionId){
         chooseWebsite();
+        searchSession(sessionId);
         clickSearch();
         openSessionDetails();
     }
