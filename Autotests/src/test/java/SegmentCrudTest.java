@@ -24,8 +24,6 @@ public class SegmentCrudTest {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://cp-inst334-client.phonexa.xyz/p8/hitmetrix/segments");
-
-
     }
 
 
@@ -43,8 +41,6 @@ public class SegmentCrudTest {
         segmentsCrud.deleteSegment();
         Assert.assertNotEquals(segmentsCrud.newRandomName, segmentsCrud.getTextFromLastSegmentName());
 //        table.getValueFromCellH(2, 6);
-
-
 //        System.out.println(table.getValueFromCellH(3, 1) + "----");
     }
 

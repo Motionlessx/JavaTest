@@ -11,7 +11,8 @@ public class HitmetrixRecordingsPage {
     private By selectWebsite = By.xpath("//div[@id='searchform_siteId_chosen']/div/ul/li[text()='bestfast']");
     private By searchButton = By.xpath("//button[text()='Search']");
     private By lastSessionDetailsButton = By.xpath("//table[@data-tablesearch-id='0']//tbody/tr[1]/td[@column-id='sessionDetails']");
-    private By lastSessionId = By.xpath("//div[@id='modalPopup']//table[@class='table no-margin disableTableFieldFilter disableFastSearch disableExport']//tr[2]/td[2]");
+    String text = "Visit ID";
+    private By lastSessionId = By.xpath("//div[@id='modalPopup']//td[text()[contains(.,'"+ text +"')]]//..//td[2]");
     private By visitIdField = By.xpath("//input[@id='searchform-sessionId']");
     private void chooseWebsite() {
         driver.findElement(websiteSelector).click();
@@ -34,8 +35,7 @@ public class HitmetrixRecordingsPage {
         openSessionDetails();
     }
     public String getLastSessionId(){
-        String sessionId = driver.findElement(lastSessionId).getText();
-        return sessionId;
+        return  driver.findElement(lastSessionId).getText();
     }
 
 

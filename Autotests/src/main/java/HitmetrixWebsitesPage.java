@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import java.sql.Timestamp;
@@ -29,27 +28,26 @@ public class HitmetrixWebsitesPage {
     private By secondDomainInput = By.xpath("//input[@id='domainform-1-domain']");
     private By getCodeButton = By.xpath("//table/tbody/tr[1]/td[last()]/button[text()[contains(.,'Get Code')]]");
     private By jsCode = By.xpath("//textarea[@id='jsFormCode']");
+//    String code = driver.findElement(By.xpath("//textarea[@id='jsFormCode']")).getText().replaceAll("\\<.*?>", "");
 
 
     public String firstWebsiteName() {
         String websiteName = driver.findElement(firstWebsiteName).getText();
         return websiteName;
     }
-    //table[@class='table table-condensed table-hover table-striped exportAllPages tableSearch-applied tableExport-applied']//tbody//tr[1]/td[1]
-    public void codeForTracking(){
+    public void clickGetCodeButton() {
         driver.findElement(getCodeButton).click();
+        getCodeForTracking();
+    }
+
+    //table[@class='table table-condensed table-hover table-striped exportAllPages tableSearch-applied tableExport-applied']//tbody//tr[1]/td[1]
+    public String getCodeForTracking(){
+        return driver.findElement(By.xpath("//textarea[@id='jsFormCode']")).getText().replaceAll("\\<.*?>", "");
     }
 //    public String code() {
 //        String jsText = driver.findElement(By.xpath("//textarea[@id='jsFormCode']")).getText();
 //        jsText = codeForTracking().replaceAll("\\<.*?>", "");
 //        return jsText;
-//    }
-
-
-
-//    public void js() {
-//        JavascriptExecutor jse = (JavascriptExecutor) driver;
-//        jse.executeScript(code());
 //    }
 
     private String getTextForDelete() {

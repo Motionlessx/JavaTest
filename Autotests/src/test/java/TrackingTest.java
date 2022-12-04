@@ -1,11 +1,12 @@
-import org.junit.After;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -26,15 +27,13 @@ public class TrackingTest {
 
     }
     @Test
-    public void main() throws InterruptedException {
+    public synchronized void main() throws InterruptedException {
         login.fillfields();
-        websitesCrud.codeForTracking();
-        String code = driver.findElement(By.xpath("//textarea[@id='jsFormCode']")).getText();
-        code = code.replaceAll("\\<.*?>", "");
-//        System.out.println(code);
-
-
-        Thread.sleep(5000);
+        websitesCrud.clickGetCodeButton();
+//        websitesCrud.getCodeForTracking();
+//        String code = driver.findElement(By.xpath("//textarea[@id='jsFormCode']")).getText().replaceAll("\\<.*?>", "");
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5), Duration.ofMillis(5000));
+        wait(5000);
         String window1 = driver.getWindowHandle();
         js.executeScript("window.open()");
         Set<String> currentWindow = driver.getWindowHandles();
@@ -45,10 +44,11 @@ public class TrackingTest {
                 break;
             }
         }
+
         driver.switchTo().window(window2);
         driver.get("https://bestfastpayday.com/");
-        jse.executeScript(code);
-        Thread.sleep(5000);
+        jse.executeScript(websitesCrud.getCodeForTracking());
+        wait(5000);
         String sessionId = getSessionId();
         System.out.println("website: " + getSessionId());
         driver.switchTo().window(window1);
@@ -61,13 +61,14 @@ public class TrackingTest {
 
 
     }
-    public  String getSessionId() {
+    private   String getSessionId() {
         return (String) jse.executeScript(String.format("return window.localStorage.getItem('spxSessionId');"));
     }
 //    @After
 //    public void browserClose(){
 //        driver.quit();
 //    }
+
 
 
 }
