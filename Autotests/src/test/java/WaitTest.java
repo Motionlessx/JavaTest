@@ -2,34 +2,26 @@ import org.junit.Test;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.logging.*;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.*;
 
-
-public class CookieTest {
-
-
-    static WebDriver driver = WebDriverFactory.initDriver(WebDriverType.FIREFOX);
+public class WaitTest {
+    static WebDriver driver = WebDriverHolder.getInstance().getDriver();
 //    static WebDriver driver;
 
     static JavascriptExecutor jse = (JavascriptExecutor) driver;
-//    @Test
-
-public static void main(String[] args) {
-
-}
-    public synchronized void test() throws InterruptedException {
+    @Test
+    public synchronized void main() throws InterruptedException {
 //        System.setProperty("webdriver.chrome.driver", "E:\\Idea\\chromedriver.exe");
 //        WebDriver driver = new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
-        wait(5000);
+//        webDriverWait.wait(2500,2500);
+
         driver.get("https://lendyou.com/");
+        wait(5000);
 
 
 //       String lastName = (String) jse.executeScript("console.log(localStorage.getItem('spxSessionId'))");
@@ -52,6 +44,4 @@ public static void main(String[] args) {
     public static String getSessionId() {
         return (String) jse.executeScript(String.format("return window.localStorage.getItem('spxSessionId');"));
     }
-
-
 }

@@ -15,24 +15,23 @@ public class FunnelCrudTest {
     public void setUp() {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://cp-inst334-client.phonexa.xyz/p8/hitmetrix/funnel");
-
+        funnelsPageTest.goToFunnelPage();
     }
     @Test
-    public void main() {
+    public void funnelTest() {
         login.fillfields();
         funnelsPageTest.addNewFunnel();
         String newFunnelName = funnelsPageTest.newRandomName;
         String funnelName = funnelsPageTest.getTextFromLastFunnelName();
         Assert.assertEquals(newFunnelName, funnelName);
-        System.out.println(newFunnelName + " " + funnelName);
+//        System.out.println(newFunnelName + " " + funnelName);
         funnelsPageTest.editLastFunnel();
         String funnelPageName = funnelsPageTest.getTextFromLastFunnelPageName();
         Assert.assertEquals("edited page name", funnelPageName);
         funnelsPageTest.deleteLastFunnel();
         String lastFunnelName = (funnelsPageTest.getTextFromLastFunnelName());
         Assert.assertNotEquals(newFunnelName, lastFunnelName);
-        System.out.println(lastFunnelName);
+//        System.out.println(lastFunnelName);
 
 
     }

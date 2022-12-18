@@ -28,6 +28,9 @@ public class HitmetrixFunnelsPage {
 
 
 
+    public void goToFunnelPage() {
+        driver.get("https://cp-inst334-client.phonexa.xyz/p8/hitmetrix/funnel");
+    }
     private void clickAddFunnelButton() {
         driver.findElement(addGoalButton).click();
     }
@@ -80,6 +83,7 @@ public class HitmetrixFunnelsPage {
     }
 
     public void addNewFunnel(){
+
         clickAddFunnelButton();
         writeGoalName();
         selectPage();

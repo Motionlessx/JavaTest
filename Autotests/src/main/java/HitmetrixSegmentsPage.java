@@ -166,7 +166,6 @@ public class HitmetrixSegmentsPage {
 
     public void editSegment() {
         clickEditButton();
-
         typeNewSegmentName();
         clickSaveAndRefresh();
     }
